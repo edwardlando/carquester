@@ -2,7 +2,11 @@ class TripsController < ApplicationController
   # GET /trips
   # GET /trips.json
   def index
-    @trips = Trip.all
+    #if (params[:start].nil?)
+     # @trips = Trip.all
+    #else
+      @trips = Trip.find_all_by_start(params[:search][:start])
+    #end
 
     respond_to do |format|
       format.html # index.html.erb

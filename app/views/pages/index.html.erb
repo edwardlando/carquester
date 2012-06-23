@@ -1,1 +1,17 @@
-Hello.
+<%= form_tag "/trips", :method => :get do%>
+  <div class="field">
+    <%= label :search, :start %><br />
+    <%= text_field :search, :start %>
+  </div>
+  <div class="field">
+    <%= label :search, :stop %><br />
+    <%= text_field :search, :stop %>
+  </div>
+  <div class="field">
+    <%= label :search, :date %><br />
+    <%= date_select :search, :date %>
+  </div>
+  <div class="actions">
+    <%= submit_tag 'Search' %>
+  </div>
+<% end %>
