@@ -1,4 +1,9 @@
 Carquester::Application.routes.draw do
+  resources :trips
+
+  devise_for :users
+
+  root :to => "trips#index"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  start: MyString
+  stop: MyString
+  date: 2012-06-23
+  price: 9.99
+  user_id: 1
+
+two:
+  start: MyString
+  stop: MyString
+  date: 2012-06-23
+  price: 9.99
+  user_id: 1
