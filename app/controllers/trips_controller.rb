@@ -5,7 +5,9 @@ class TripsController < ApplicationController
     #if (params[:start].nil?)
      # @trips = Trip.all
     #else
-      @trips = Trip.find_all_by_start(params[:search][:start])
+
+      @date = "#{params[:search]['date(1i)']}-#{formatMonth(params[:search]['date(2i)'])}-#{params[:search]['date(3i)']}"
+      @trips = Trip.find_all_by_start_and_stop_and_date(params[:search][:start], params[:search][:stop], @date)
     #end
 
     respond_to do |format|
@@ -84,5 +86,12 @@ class TripsController < ApplicationController
       format.html { redirect_to trips_url }
       format.json { head :no_content }
     end
+  end
+  
+  def formatMonth(month)
+    if month.length < 2
+      month = "0#{month}"
+    end
+    month
   end
 end
