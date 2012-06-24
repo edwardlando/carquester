@@ -1,19 +1,28 @@
-<%= form_tag "/trips", :method => :get do%>
-  <div class="field">
-    <%= label :search, :start %><br />
-    <%= text_field :search, :start %>
+<% unless user_signed_in? %>
+  <div id="login">
+    <%= render "devise/sessions/new" %>
   </div>
-  <div class="field">
-    <%= label :search, :stop %><br />
-    <%= text_field :search, :stop %>
-  </div>
-  <div class="field">
-    <%= label :search, :date %><br />
-    <%= date_select :search, :date %>
-  </div>
-  <div class="actions">
-    <%= submit_tag 'Search' %>
+<% else %>
+  <div id="user_profile">
+    <%= render :partial => "user_profile", :locals => { :user => @user } %>
   </div>
 <% end %>
-
-
+<div id="search">
+  <%= form_tag "/trips", :method => :get do%>
+    <div class="field">
+      <%= label :search, :start %><br />
+      <%= text_field :search, :start %>
+    </div>
+    <div class="field">
+      <%= label :search, :stop %><br />
+      <%= text_field :search, :stop %>
+    </div>
+    <div class="field">
+      <%= label :search, :date %><br />
+      <%= date_select :search, :date %>
+    </div>
+    <div class="actions">
+      <%= submit_tag 'Search' %>
+    </div>
+  <% end %>
+</div>
