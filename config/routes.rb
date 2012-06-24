@@ -9,9 +9,9 @@ Carquester::Application.routes.draw do
 
   resources :trips
   
-  resources :users, :only => [:show]
-
   devise_for :users
+  
+  resources :users, :only => [:show]
 
   root :to => "pages#index"
   

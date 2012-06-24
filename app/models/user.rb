@@ -11,7 +11,8 @@ class User < ActiveRecord::Base
   has_attached_file :photo
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :photo
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :photo, 
+  :gender, :first_name, :last_name, :interested_in
   # attr_accessible :title, :body
   
   def full_name
