@@ -6,8 +6,16 @@ class TripsController < ApplicationController
      @trips = Trip.all
     else
       @date = "#{params[:search]['date(1i)']}-#{formatMonth(params[:search]['date(2i)'])}-#{params[:search]['date(3i)']}"
-      @trips = Trip.find_all_by_start_and_stop_and_date_and_gender(params[:search][:start], params[:search][:stop], @date,
-      params[:gender])
+      # @trips = Trip.find_all_by_start_and_stop_and_date(params[:search][:start], params[:search][:stop], @date)
+      # @trips = @trips.users.find_all_by_gender(params[:gender])
+      
+      start = params[:start]
+      stop = params[:stop]
+      gender = params[:gender]
+      
+      @trips = Trip.find(:all, :conditions => ["start = ? and stop = ? and date = ? and gender = ?", start, stop, @date, gender])
+      
+      
     end
 
     respond_to do |format|
@@ -48,6 +56,7 @@ class TripsController < ApplicationController
   def create
     @trip = Trip.new(params[:trip])
     @trip.user_id = current_user.id
+    @trip.gender = current_user.gender
 
     respond_to do |format|
       if @trip.save
