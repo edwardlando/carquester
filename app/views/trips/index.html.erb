@@ -1,32 +1,10 @@
-<h1>Listing trips</h1>
+<h1><%= @query %></h1>
 
-
-<table>
-  <tr>
-    <th>Start</th>
-    <th>Stop</th>
-    <th>Date</th>
-    <th>Price</th>
-    <th>User</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @trips.each do |trip| %>
-  <tr>
-    <td><%= trip.start %></td>
-    <td><%= trip.stop %></td>
-    <td><%= trip.date %></td>
-    <td><%= trip.price %></td>
-    <td><%= trip.user_id %></td>
-    <td><%= link_to 'Show', trip %></td>
-    <td><%= link_to 'Edit', edit_trip_path(trip) %></td>
-    <td><%= link_to 'Destroy', trip, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
+<% unless @trips.size == 0 %>
+  <%= render @trips %>
+<% else %>
+<em>Your search returned no results</em>
 <% end %>
-</table>
-
 <br />
 
-<%= link_to 'New Trip', new_trip_path %>
+<%= link_to 'Back', root_path %>

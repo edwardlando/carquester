@@ -3,6 +3,7 @@ class TripsController < ApplicationController
   # GET /trips.json
   def index
     if (params[:search].nil?)
+     @query = "All trips"
      @trips = Trip.all
     else
       @date = "#{params[:search]['date(1i)']}-#{formatMonth(params[:search]['date(2i)'])}-#{params[:search]['date(3i)']}"
@@ -12,6 +13,8 @@ class TripsController < ApplicationController
       start = params[:start]
       stop = params[:stop]
       gender = params[:gender]
+      
+      @query = "#{start} to #{stop} on #{@date} with a #{gender}"
       
       @trips = Trip.find(:all, :conditions => ["start = ? and stop = ? and date = ? and gender = ?", start, stop, @date, gender])
       
