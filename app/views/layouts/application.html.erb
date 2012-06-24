@@ -18,12 +18,13 @@
         <li>
           <%= link_to "Trips", trips_path %>
         </li>
+        <% if user_signed_in? %>
         <li>
           <div id="btn btn-large">
 	      <%= button_to "Post a trip", :action => "new", :controller => "trips" %>
         </li>
+        <% end %>
       </ul>
-      </div>
     </div>
   </div>
   <div id="main">
