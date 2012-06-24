@@ -9,6 +9,8 @@ Carquester::Application.routes.draw do
   
   match "/search" => "trips#index"
   
+  match "/trips/join/:id" => "trips#join"
+   
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

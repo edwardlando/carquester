@@ -93,4 +93,17 @@ class TripsController < ApplicationController
     end
     month
   end
+  
+  def join
+    @trip = Trip.find(params[:id])
+    @user = current_user
+    respond_to do |format|
+        format.html 
+        format.json { head :no_content }
+    end
+    
+  end
+  
+  
+  
 end
