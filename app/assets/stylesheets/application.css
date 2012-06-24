@@ -82,6 +82,11 @@ h3 {
   clear:both;
 }
 
+#registrations, #passwords {
+  width:900px;
+  margin:0 auto;
+}
+
 #search_instructions {
 	position: relative;
 	top: 2.5em;
