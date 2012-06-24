@@ -96,9 +96,14 @@ class TripsController < ApplicationController
   
   def join
     @trip = Trip.find(params[:id])
-    @user = current_user
+    @request = Request.create
+    @request.trip_id = @trip.id
+    @request.requester_id = current_user.id
+    @request.requestee_id = @trip.user_id
+    @request.status = "pending"
+    @request.save
     respond_to do |format|
-        format.html 
+        format.html { redirect_to root_url, notice: "Request sent!" }
         format.json { head :no_content }
     end
     

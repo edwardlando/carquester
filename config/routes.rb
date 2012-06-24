@@ -1,7 +1,15 @@
 Carquester::Application.routes.draw do
+  resources :requestees
+
+  resources :requesters
+
+  resources :requests
+
   resources :reviews
 
   resources :trips
+  
+  resources :users, :only => [:show]
 
   devise_for :users
 
@@ -10,6 +18,8 @@ Carquester::Application.routes.draw do
   match "/search" => "trips#index"
   
   match "/trips/join/:id" => "trips#join"
+  
+  match "/trips/new" => "trips#new"
    
   # The priority is based upon order of creation:
   # first created -> highest priority.

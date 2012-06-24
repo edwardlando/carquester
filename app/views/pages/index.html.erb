@@ -16,7 +16,7 @@
 </div>
 
 <div id="btn btn-large">
-	<%= button_to "Post a trip", :action => 'new', :controller => 'trips'%>
+	<%= button_to "Post a trip", :action => "new", :controller => "trips" %>
 </div>
 
 <div id="left_sidebar">
@@ -32,3 +32,12 @@
     <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
   <% end %>
 </div>
+
+<% if @requests %>
+  <div id="received_requests">
+    <strong>Request Inbox</strong><br />
+    <table>
+      <%= render @requests %>
+    </table>
+  </div>
+<% end %>
