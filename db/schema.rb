@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120624055352) do
+ActiveRecord::Schema.define(:version => 20120624083827) do
 
   create_table "requests", :force => true do |t|
     t.integer  "requester_id"
@@ -64,6 +64,7 @@ ActiveRecord::Schema.define(:version => 20120624055352) do
     t.string   "gender"
     t.string   "interested_in"
     t.string   "bio"
+    t.integer  "age"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

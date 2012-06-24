@@ -16,6 +16,9 @@
   <div><%= f.label :gender %><br />
   <%= f.select :gender, options_for_select([ "Male", "Female" ], "Male") %></div>
 
+  <div><%= f.label :age %><br />
+  <%= f.text_field :age %></div>
+
   <div><%= f.label :interested_in %><br />
   <%= f.select :interested_in, options_for_select([ "Men", "Women" ], "Women") %></div>
   
