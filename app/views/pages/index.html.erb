@@ -30,7 +30,7 @@
     <div id="login">
       <%= render "devise/sessions/new" %>
     </div>
-    <%= link_to "Sign up", new_user_registration_path %>
+    <%= link_to "Sign up!", new_user_registration_path %>
   <% else %>
     <div id="user_profile">
       <%= render :partial => "user_profile", :locals => { :user => @user } %>
