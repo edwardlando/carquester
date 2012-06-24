@@ -85,11 +85,21 @@ class RequestsController < ApplicationController
     @request = Request.find(params[:id])
     @request.status = "accepted"
     @request.save
+    
+    respond_to do |format|
+      format.html { redirect_to root_url, notice: "Request accepted." }
+      format.json { head :no_content }
+    end
   end
   
   def reject
     @request = Request.find(params[:id])
     @request.status = "rejected"
     @request.save
+    
+    respond_to do |format|
+      format.html { redirect_to root_url, notice: "Request rejected." }
+      format.json { head :no_content }
+    end
   end
 end

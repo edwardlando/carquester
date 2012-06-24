@@ -23,4 +23,16 @@ class User < ActiveRecord::Base
     #unless user.requests.nil?
     Request.find_all_by_requestee_id_and_status(id, "pending")
   end
+  
+  def accepted_requests
+    Request.find_all_by_requester_id_and_status(id, "accepted")
+  end
+  
+  def rejected_requests
+    Request.find_all_by_requester_id_and_status(id, "rejected")
+  end
+  
+  def pending_requests
+    Request.find_all_by_requester_id_and_status(id, "pending")
+  end
 end
