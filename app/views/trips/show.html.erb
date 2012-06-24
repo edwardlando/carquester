@@ -24,6 +24,9 @@
   <b>User:</b>
   <%= @trip.user_id %>
 </p>
+ 
+
+<%= button_to "Join Trip", :action => "join", :id => @trip.id %>
 
 
 <%= link_to 'Edit', edit_trip_path(@trip) %> |
