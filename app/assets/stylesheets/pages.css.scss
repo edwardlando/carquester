@@ -1,3 +1,30 @@
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#search {
+  width:100%;
+  height: 300px;
+  background: url("../assets/burst_homepage_bg.png") no-repeat scroll center center #EE00EE;
+}
+
+#search .field {
+  display:inline;
+  float:left;
+  margin: 0 20px;
+}
+
+#search_date_1i {
+  width:60px;
+}
+
+#search_date_2i {
+  width:100px;
+}
+
+#search_date_3i {
+  width:50px;
+}
+
+#left_sidebar {
+  clear:both;
+}
