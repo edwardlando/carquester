@@ -7,26 +7,21 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div id="header">
-  <div id="logo">
-    <h1>CarQuester</h1>
+<div id="wrap">
+  <div id="header">
+    <div id="logo">
+      <h1>CarQuester</h1>
+    </div>
+    <div id="nav">
+      <%= link_to "Trips", trips_path %>
+    </div>
   </div>
-  <div id="nav">
+  <div id="main">
+    <% unless notice.nil? %>
+      <p class="notice"><%= notice %></p>
+    <% end %>
+    <%= yield %>
   </div>
-</div>
-<div id="main">
-<div id="user_nav">
-<% if user_signed_in? %>
-  Signed in as <%= current_user.email %> with User ID: <%= current_user.id %>. Not you?
-  <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
-<% else %>
-  <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
-<% end %>
-</div>
-<% unless notice.nil? %>
-  <p class="notice"><%= notice %></p>
-<% end %>
-<%= yield %>
 </div>
 </body>
 </html>
