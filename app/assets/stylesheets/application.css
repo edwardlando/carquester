@@ -81,3 +81,8 @@ h3 {
 #main {
   clear:both;
 }
+
+#registrations, #passwords {
+  width:900px;
+  margin:0 auto;
+}

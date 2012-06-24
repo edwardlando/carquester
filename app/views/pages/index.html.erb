@@ -37,42 +37,57 @@
   <% end %>
 </div>
 
-<% if @received_requests %>
   <div id="received_requests">
     <strong>Request Inbox</strong><br />
+    <% unless @received_requests.size == 0 %>
     <table>
       <%= render @received_requests %>
     </table>
+    <% else %>
+      <em>No received requests.</em>
+    <% end %>
   </div>
-<% end %>
-<% if @accepted_requests %>
+
+
   <div id="accepted_requests">
     <strong>Accepted Requests</strong><br />
+    <% unless @accepted_requests.size == 0 %>
     <table>
       <% @accepted_requests.each do |accepted_request| %>
         <%= render partial: "/requests/request_outbox", :locals => { :trip => Trip.find(accepted_request.trip_id), :requestee => accepted_request.requestee} %>
       <% end %>
     </table>
+    <% else %>
+      <em>No accepted requests.</em>
+    <% end %>
   </div>
-<% end %>
-<% if @rejected_requests %>
+
+
   <div id="rejected_requests">
     <strong>Rejected Requests</strong><br />
+    <% unless @rejected_requests.size == 0 %>
     <table>
       <% @rejected_requests.each do |rejected_request| %>
         <%= render partial: "/requests/request_outbox", :locals => { :trip => Trip.find(rejected_request.trip_id), :requestee => rejected_request.requestee} %>
       <% end %>
     </table>
+    <% else %>
+      <em>No rejected requests.</em>
+    <% end %>
   </div>
-<% end %>
-<% if @pending_requests %>
+
   <div id="pending_requests">
+
     <strong>Pending Requests</strong><br />
+    <% unless @pending_requests.size == 0 %>
     <table>
       <% @pending_requests.each do |pending_request| %>
         <%= render partial: "/requests/request_outbox", :locals => { :trip => Trip.find(pending_request.trip_id), :requestee => pending_request.requestee} %>
       <% end %>
     </table>
+    <% else %>
+      <em>No pending requests.</em>
+    <% end %>
   </div>
-<% end %>
+
 </div>
