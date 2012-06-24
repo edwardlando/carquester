@@ -11,7 +11,7 @@ Carquester::Application.routes.draw do
   
   devise_for :users
   
-  resources :users, :only => [:show]
+  resources :users, :only => [:show, :edit]
 
   root :to => "pages#index"
   
@@ -24,7 +24,13 @@ Carquester::Application.routes.draw do
   match "/requests/accept/:id" => "requests#accept"
   
   match "/requests/reject/:id" => "requests#reject"
-   
+  
+  match "/users/:id/edit" => "users#edit"
+  
+  match "/users/:id" => "users#update" #potential conflict with show
+  
+  
+       
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

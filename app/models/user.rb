@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
          
   # have to validate for age
          
-  has_attached_file :photo
+  has_attached_file :photo, :default_url => "default.jpeg"
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :photo, 
