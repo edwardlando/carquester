@@ -14,9 +14,15 @@
       <h3>At worst you give a ride, at best you get a bride.</h3>
     </div>
     <div id="nav">
-      <%= link_to "Trips", trips_path %>
-      <div id="btn btn-large">
-	    <%= button_to "Post a trip", :action => "new", :controller => "trips" %>
+      <ul>
+        <li>
+          <%= link_to "Trips", trips_path %>
+        </li>
+        <li>
+          <div id="btn btn-large">
+	      <%= button_to "Post a trip", :action => "new", :controller => "trips" %>
+        </li>
+      </ul>
       </div>
     </div>
   </div>

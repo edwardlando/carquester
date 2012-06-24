@@ -52,6 +52,14 @@ h3 {
   float:right;
 }
 
+#nav ul, #nav li {
+  list-style-type:none;
+  display:inline;
+  float:left;
+  margin-top: 1.5em;
+  margin-right: 1em;
+}
+
 #main {
   clear:both;
 }
