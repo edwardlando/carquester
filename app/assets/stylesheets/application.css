@@ -11,6 +11,11 @@
  *= require_self
  *= require_tree .
 */
+html, body {
+  margin:0 !important;
+  padding:0 !important;
+}
+
 #header{
   width:900px;
   margin:0 auto;
@@ -23,4 +28,8 @@
 
 #nav {
   float:left;
+}
+
+#main {
+  clear:both;
 }
