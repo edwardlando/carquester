@@ -12,15 +12,12 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :start %><br />
-    <%= f.text_field :start %>
+    <%= f.text_field :start, :placeholder => "Start" %>
   </div>
   <div class="field">
-    <%= f.label :stop %><br />
-    <%= f.text_field :stop %>
+    <%= f.text_field :stop, :placeholder => "Stop" %>
   </div>
   <div class="field">
-    <%= f.label :date %><br />
     <%= f.date_select :date %>
   </div>
   <div class="actions">

@@ -1,0 +1,1 @@
+<%= link_to "#{trip.start} to #{trip.stop} on #{trip.date}", trip_path(trip) %> with <%= link_to "#{User.find(trip.user_id).full_name}", user_path(trip.user_id) %><br/>

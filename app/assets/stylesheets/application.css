@@ -82,7 +82,7 @@ h3 {
   clear:both;
 }
 
-#registrations, #passwords {
+#registrations, #passwords, #users {
   width:900px;
   margin:0 auto;
 }
