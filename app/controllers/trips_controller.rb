@@ -2,13 +2,12 @@ class TripsController < ApplicationController
   # GET /trips
   # GET /trips.json
   def index
-    #if (params[:start].nil?)
-     # @trips = Trip.all
-    #else
-
+    if (params[:search].nil?)
+     @trips = Trip.all
+    else
       @date = "#{params[:search]['date(1i)']}-#{formatMonth(params[:search]['date(2i)'])}-#{params[:search]['date(3i)']}"
       @trips = Trip.find_all_by_start_and_stop_and_date(params[:search][:start], params[:search][:stop], @date)
-    #end
+    end
 
     respond_to do |format|
       format.html # index.html.erb
