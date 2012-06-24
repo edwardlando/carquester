@@ -9,6 +9,10 @@
     <div class="field">
       <%= date_select :search, :date %>
     </div>
+    <div class="field">
+	  <%= select_tag :gender, options_for_select([ "Male", "Female" ], "Male") %> 
+
+	</div>
     <div class="actions">
       <%= submit_tag 'Search' %>
     </div>
