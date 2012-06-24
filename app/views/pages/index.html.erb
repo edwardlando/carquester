@@ -23,23 +23,6 @@
 </div>
 </div>
 
-<% if user_signed_in? %>
-
-<div id="btn btn-large">
-	<%= button_to "Post a trip", :action => "new", :controller => "trips" %>
-</div>
-
-<% else %>
-
-<div id="btn btn-large">
-	
-	<%= button_to "Post a trip", new_user_session_path %>
-	<!-- have message display onclick -->
-	
-</div>
-
-<% end %>
-
 <div id="left_sidebar">
   <% unless user_signed_in? %>
     <div id="login">

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>CarQuester</title>
+  <title>CaRomeo</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -10,10 +10,19 @@
 <div id="wrap">
   <div id="header">
     <div id="logo">
-      <h1>CarQuester</h1>
+      <h1><%= link_to "CaRomeo", root_url %></h1>
+      <h3>At worst you give a ride, at best you get a bride.</h3>
     </div>
     <div id="nav">
       <%= link_to "Trips", trips_path %>
+      <div id="btn btn-large">
+	    <% if user_signed_in? %>
+	    <%= button_to "Post a trip", :action => "new",
+	                                 :controller => "trips" %>
+	    <% else %>
+	    <%= button_to "Post a trip", new_user_session_path %>
+	    <% end %>
+      </div>
     </div>
   </div>
   <div id="main">

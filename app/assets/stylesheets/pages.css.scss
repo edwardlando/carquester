@@ -20,15 +20,15 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffcece', end
 #search_inner_wrapper {
   background-color: white;
   position: relative;
-  top:40px;
-  height: 60px;
-  width:600px;
+  top:2em;
+  height: 14em;
+  width:20em;
   margin: 0px auto;
-  padding: 75px 10px;
-   -moz-border-radius: 20px;
-    -webkit-border-radius: 20px;
-    -khtml-border-radius: 20px;
-    border-radius: 20px;
+  padding: 1em 1em;
+   -moz-border-radius: 1em;
+    -webkit-border-radius: 1em;
+    -khtml-border-radius: 1em;
+    border-radius: 1em;
 }
 
 #search {
