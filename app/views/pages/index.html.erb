@@ -3,10 +3,10 @@
   <div id="search">
   <%= form_tag "/trips", :method => :get do %>
     <div class="field">
-      <%= text_field_tag :start, placeholder='Point of Departure' %>
+      <%= text_field_tag :start, nil, :placeholder => "Point of Departure" %>
     </div><br/>
     <div class="field">
-      <%= text_field_tag :stop, placeholder='Destination' %>
+      <%= text_field_tag :stop, nil, :placeholder => "Destination" %>
     </div><br/>
     <div class="field">
       <%= date_select :search, :date, :start_year => Time.now.year,
@@ -39,7 +39,7 @@
     <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
   <% end %>
 </div>
-
+<% if user_signed_in? %>
   <div id="received_requests">
     <strong>Request Inbox</strong><br />
     <% unless @received_requests.size == 0 %>
@@ -93,6 +93,7 @@
     <% end %>
   </div>
 </div>
+<% end %>
 
 
 <br /><br /><br /><br /><br /><br /><br /><br/ >
