@@ -8,11 +8,16 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
          
+  validates_exclusion_of :age, :in => 0..17, :message => "- Looks like you're
+  not old enough to join the site!"
+         
+  # have to validate for age
+         
   has_attached_file :photo
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :photo, 
-  :gender, :first_name, :last_name, :interested_in
+  :gender, :first_name, :last_name, :interested_in, :age
   # attr_accessible :title, :body
   
   def full_name
