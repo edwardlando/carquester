@@ -14,7 +14,11 @@
 		<%= f.label :email %>
 		<%= f.text_field :email %> <br />
 		
+		<%= f.label :photo %>
 		<%= f.file_field :photo %>
+		
+		<%= f.label :bio %>
+		<%= f.text_area :bio, :placeholder => "I like to read. I also like long walks on the beach..."%>
 		
 		<%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
 	<% end %>

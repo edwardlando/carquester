@@ -3,10 +3,10 @@
   <div id="search">
   <%= form_tag "/trips", :method => :get do %>
     <div class="field">
-      <%= text_field_tag :start, 'Point of Departure' %>
+      <%= text_field_tag :start, placeholder='Point of Departure' %>
     </div><br/>
     <div class="field">
-      <%= text_field_tag :stop, 'Destination' %>
+      <%= text_field_tag :stop, placeholder='Destination' %>
     </div><br/>
     <div class="field">
       <%= date_select :search, :date, :start_year => Time.now.year,
@@ -92,5 +92,15 @@
       <em>No pending requests.</em>
     <% end %>
   </div>
-
 </div>
+
+
+<br /><br /><br /><br /><br /><br /><br /><br/ >
+<br /><br /><br /><br /><br /><br /><br /><br/ >
+
+
+<div id="footer">
+	CaRomeo was created by <a href="http://www.linkedin.com/pub/daniel-chiu/4b/286/549" id="daniel">Daniel Chiu</a> and
+	<a href="http://twitter.com/#!/edwardlando" id="edward">Edward Lando</a> during <a href = "http://angelhack.com/" id="angelhack">AngelHack</a> (Summer 2012)
+ </div>
+

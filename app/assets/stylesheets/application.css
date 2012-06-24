@@ -98,3 +98,15 @@ h3 {
 #search_wrapper {
 	text-align: center;
 }
+
+#footer {
+	text-align: center;
+}
+
+a {
+	text-decoration: none !important ;
+}
+
+a:hover {
+	color: #ffcece !important;
+}
