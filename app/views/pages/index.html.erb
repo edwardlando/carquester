@@ -33,11 +33,41 @@
   <% end %>
 </div>
 
-<% if @requests %>
+<% if @received_requests %>
   <div id="received_requests">
     <strong>Request Inbox</strong><br />
     <table>
-      <%= render @requests %>
+      <%= render @received_requests %>
+    </table>
+  </div>
+<% end %>
+<% if @accepted_requests %>
+  <div id="accepted_requests">
+    <strong>Accepted Requests</strong><br />
+    <table>
+      <% @accepted_requests.each do |accepted_request| %>
+        <%= render partial: "/requests/request_outbox", :locals => { :trip => Trip.find(accepted_request.trip_id), :requestee => accepted_request.requestee} %>
+      <% end %>
+    </table>
+  </div>
+<% end %>
+<% if @rejected_requests %>
+  <div id="rejected_requests">
+    <strong>Rejected Requests</strong><br />
+    <table>
+      <% @rejected_requests.each do |rejected_request| %>
+        <%= render partial: "/requests/request_outbox", :locals => { :trip => Trip.find(rejected_request.trip_id), :requestee => rejected_request.requestee} %>
+      <% end %>
+    </table>
+  </div>
+<% end %>
+<% if @pending_requests %>
+  <div id="pending_requests">
+    <strong>Pending Requests</strong><br />
+    <table>
+      <% @pending_requests.each do |pending_request| %>
+        <%= render partial: "/requests/request_outbox", :locals => { :trip => Trip.find(pending_request.trip_id), :requestee => pending_request.requestee} %>
+      <% end %>
     </table>
   </div>
 <% end %>

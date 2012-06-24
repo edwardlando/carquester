@@ -1,5 +1,5 @@
 <tr>
   <td>Request from: <%= link_to request.requester.full_name, :controller => "users", :action => "show", :id => request.requester_id %></td>
-  <td><%= link_to 'Accept', request, action: :accept, controller: :requests %></td>
-  <td><%= link_to 'Reject', request, action: :reject, controller: :requests %></td>
+  <td><%= link_to 'Accept', "requests/accept/#{request.id}", id: request.id %></td>
+  <td><%= link_to 'Reject', "requests/reject/#{request.id}", id: request.id %></td>
 </tr>
