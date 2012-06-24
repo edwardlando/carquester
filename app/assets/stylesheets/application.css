@@ -81,3 +81,15 @@ h3 {
 #main {
   clear:both;
 }
+
+#search_instructions {
+	position: relative;
+	top: 2.5em;
+	/* width: 315px; */
+	margin: 0 auto;
+	
+}
+
+#search_wrapper {
+	text-align: center;
+}
