@@ -1,4 +1,6 @@
 Carquester::Application.routes.draw do
+  resources :reviews
+
   resources :trips
 
   devise_for :users
