@@ -1,7 +1,7 @@
-Name: <%= user.first_name %> <%= user.last_name %> <br/>
-Gender: <%= user.gender %><br/>
-Age: <%= user.age %><br/>
+<%= image_tag user.photo.url, id: "profile_pic" %><br/>
+<%= user.first_name %> <%= user.last_name %> <br/>
+<%= user.gender %><br/>
+<%= "#{user.age} years old" %><br/>
 Interested in: <%= user.interested_in %><br/>
 
 
-<%= image_tag user.photo.url %>

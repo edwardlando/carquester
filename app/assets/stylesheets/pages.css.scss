@@ -53,6 +53,29 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffcece', end
   width:50px;
 }
 
+#lower_content {
+  width:900px;
+  
+  margin:1em auto 0;
+}
+
 #left_sidebar {
   clear:both;
+}
+
+#profile_pic {
+  width:5em;
+  height:5em;
+  margin-bottom:.5em;
+}
+
+#left_sidebar {
+  float:left;
+  width:100px;
+}
+
+#received_requests, #accepted_requests, #rejected_requests, #pending_requests {
+  width: 150px;
+  float:left;
+  margin-right:2em;
 }
